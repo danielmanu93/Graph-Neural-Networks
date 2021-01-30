@@ -351,15 +351,15 @@ def prepare_data(group_feats, group_graphs, group_labels, i, cuda=True):
 base = os.path.split(os.path.realpath(__file__))[0]
 
 
-def load_data(save_file="ppi_data.npy"):
+def load_data(save_file="train_graph_id.npy"):
     if os.path.exists(save_file):
         return np.load(save_file)
     global base
     base += "/../"
-    filepath = base + "/p2p_dataset/ppi-G.json"
+    filepath = base + "/raw/train_graph.json"
     graph_data = json_graph.node_link_graph(json.load(open(filepath)))
-    feats = np.load(base + "/p2p_dataset/ppi-feats.npy")
-    labels = json.load(open(base + "/p2p_dataset/ppi-class_map.json"))
+    feats = np.load(base + "/raw/train_feats.npy")
+    labels = np.load(base + "/raw/train_labels.npy"))
 
     feats = standarizing_features(graph_data, feats)
 
