@@ -50,11 +50,11 @@ def build_args():
     # child model
     parser.add_argument("--dataset", type=str, default="PPI", required=False,
                         help="The input dataset.")
-    parser.add_argument("--epochs", type=int, default=5,
+    parser.add_argument("--epochs", type=int, default=300,
                         help="number of exploring epochs in exploring child model")
-    parser.add_argument("--retrain_epochs", type=int, default=5,
+    parser.add_argument("--retrain_epochs", type=int, default=300,
                         help="number of epochs if the child model is retrained")
-    parser.add_argument('--noRetrain_epochs', type=int, default=5,
+    parser.add_argument('--noRetrain_epochs', type=int, default=300,
                         help="number of epochs if the child model is not retrained")
     parser.add_argument('--fromScratch_epochs', type=int, default=300,
                         help="number of training epochs for the best model trained from scratch")
@@ -106,7 +106,7 @@ def build_args_for_cora(args):
     args.controller_lr = 3.5e-4
     args.controller_grad_clip = 0
     args.child_model_grad_clip = 0
-    args.fromScratch_epochs = 2000 # 5000
+    args.fromScratch_epochs = 200 # 5000
     args.controller_optim = 'adam'
     args.batch_normal = False    # False
     args.param_file = "cora.pkl"
@@ -123,7 +123,7 @@ def build_args_for_citeseer(args):
     args.controller_lr = 3.5e-4
     args.controller_grad_clip = 0
     args.child_model_grad_clip = 0
-    args.fromScratch_epochs = 2000 # 5000
+    args.fromScratch_epochs = 200 # 5000
     args.controller_optim = 'adam'
     args.batch_normal = False
     args.param_file = "citeseer.pkl"
@@ -140,7 +140,7 @@ def build_args_for_pubmed(args):
     args.controller_lr = 3.5e-4
     args.controller_grad_clip = 0
     args.child_model_grad_clip = 0
-    args.fromScratch_epochs = 2000 # 5000
+    args.fromScratch_epochs = 200 # 5000
     args.controller_optim = 'adam'
     args.batch_normal = False
     args.param_file = "pubmed.pkl"
