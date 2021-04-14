@@ -11,7 +11,7 @@ state_space = {
     'activate_function': ["sigmoid", "tanh", "relu", "linear",
                           "softplus", "leaky_relu", "relu6", "elu"],
     'number_of_heads': [1, 2, 4, 6, 8, 12, 16, 20],
-    'hidden_units': [2, 4, 8, 16, 32, 64]
+    'hidden_units': [2, 4, 8, 16, 32, 64],
 }
 
 
